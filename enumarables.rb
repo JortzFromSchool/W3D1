@@ -40,8 +40,9 @@ class Array
     end
 
     def my_flatten
-        return self unless self.is_a?(Array)
-        [self[0].my_flatten] + [self[1...self.length].my_flatten]
-        
+        return self unless self[0].is_a?(Array)
+        #return self[0] if self.length == 1
+        return self[0].my_flatten if self.length == 1
+        return self.shift.my_flatten + self.my_flatten
     end
 end
