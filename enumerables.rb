@@ -68,4 +68,24 @@ class Array
         return result
 
     end
+
+    def my_rotate(num = 1)
+        result = self
+        num.times do
+            result = result << result.shift
+        end
+        return result
+    end
+
+    def my_join(join_str = "")
+        result = ""
+        self.each_with_index do |elem, index|
+            if self[index+1] == nil
+                result << elem
+            else
+                result << elem + join_str
+            end
+        end
+        return result
+    end
 end
