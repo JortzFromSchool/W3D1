@@ -42,6 +42,6 @@ class Array
     def my_flatten
         return self unless self.is_a?(Array)
         [self[0].my_flatten] + [self[1...self.length].my_flatten]
-
+        
     end
 end
