@@ -40,18 +40,11 @@ class Array
     end
 
     def my_flatten
-<<<<<<< HEAD:enumarables.rb
-        return self unless self[0].is_a?(Array) || self.length > 1
-        #return self[0] if self.length == 1
-        return self[0].my_flatten if self.length == 1
-        return self.shift.my_flatten + self.my_flatten
-=======
         result = []
         self.each do |ele|
             result << ele unless ele.is_a?(Array)
             result += ele.my_flatten if ele.is_a?(Array)
         end
         return result
->>>>>>> cf3090a539221e9846451205b09ea4e77882dc73:enumerables.rb
     end
 end
