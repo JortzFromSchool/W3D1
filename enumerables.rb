@@ -47,4 +47,25 @@ class Array
         end
         return result
     end
+
+    def my_zip(*args)
+        result = Array.new(self.length){Array.new}
+        self.each_with_index do |elem, index|
+            result[index] << elem
+        end
+        
+        i = 0
+        while i < self.length
+            args.each do |array|
+                if array[i] == nil
+                    result[i] << nil
+                else
+                    result[i] << array[i]
+                end
+            end
+            i += 1
+        end
+        return result
+
+    end
 end
